@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WAR Scouting 2026</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        button {
+            background-color: red;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>WAR Scouting 2026</h1>
+
+    <button onclick="handleClick()">CLICK THIS!</button>
+
+    <script>
+        function handleClick() {
+            const textToCopy = "https://raw.githubusercontent.com/warroboticss/scouting/refs/heads/main/config.json";
+
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    // Redirect after copying
+                    window.location.href = "https://frc2713.github.io/QRScout/";
+                })
+                .catch(err => {
+                    console.error("Failed to copy: ", err);
+                });
+        }
+    </script>
+
+</body>
+</html>
