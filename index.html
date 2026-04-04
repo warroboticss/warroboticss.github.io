@@ -2,32 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Fix mobile scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>WAR Scouting 2026</title>
+
     <style>
         body {
             background-color: black;
-            color: red;
+            color: rgb(185, 0, 0);
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 20%;
+
+            /* Center everything nicely */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+            margin: 0;
         }
 
         h1 {
-            color: red;
+            color: rgb(185, 0, 0);
+            font-size: 8vw; /* scales with screen width */
+            margin-bottom: 40px;
+        }
+
+        p {
+            color: white;
+            font-size: 2.5vw; /* scales with screen width */
+            margin: 40px 10vw 40px 10vw;
+            text-align: center;
         }
 
         button {
-            background-color: red;
+            background-color: rgb(185, 0, 0);
             color: black;
             border: none;
-            padding: 15px 30px;
-            font-size: 18px;
+
+            padding: 20px 40px;
+            font-size: 6vw; /* big on mobile */
+            max-font-size: 28px;
+
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 10px;
         }
 
         button:hover {
-            opacity: 0.8;
+            opacity: 0.85;
         }
     </style>
 </head>
@@ -37,17 +61,18 @@
 
     <button onclick="handleClick()">CLICK THIS!</button>
 
+    <p>After you click the button, scroll down to "Edit Config", paste the URL (already copied for you), and click save.</p>
+
     <script>
         function handleClick() {
             const textToCopy = "https://raw.githubusercontent.com/warroboticss/scouting/refs/heads/main/config.json";
 
             navigator.clipboard.writeText(textToCopy)
                 .then(() => {
-                    // Redirect after copying
                     window.location.href = "https://frc2713.github.io/QRScout/";
                 })
                 .catch(err => {
-                    console.error("Failed to copy: ", err);
+                    console.error("Copy failed:", err);
                 });
         }
     </script>
