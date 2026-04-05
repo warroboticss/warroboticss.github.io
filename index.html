@@ -2,39 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <!-- Fix mobile scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>WAR Scouting 2026</title>
 
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* kills scrolling */
+            height: 100%;
+        }
+
         body {
             background-color: black;
             color: rgb(185, 0, 0);
             font-family: Arial, sans-serif;
 
-            /* Center everything nicely */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            height: 100vh;
-            margin: 0;
+            height: 100dvh; /* better than 100vh on mobile */
         }
 
         h1 {
             color: rgb(185, 0, 0);
-            font-size: 8vw; /* scales with screen width */
-            margin-bottom: 40px;
+            font-size: 8vw;
+            margin-bottom: 30px;
         }
 
         p {
             color: white;
-            font-size: 2.5vw; /* scales with screen width */
-            margin: 40px 10vw 40px 10vw;
+            font-size: calc(2vw + 15px);
+            margin: 20px 10vw;
             text-align: center;
+            max-width: 600px;
         }
 
         button {
@@ -42,12 +46,12 @@
             color: black;
             border: none;
 
-            padding: 20px 40px;
-            font-size: 6vw; /* big on mobile */
-            max-font-size: 28px;
+            padding: 25px 50px;
+            font-size: 6vw;
 
             cursor: pointer;
             border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         button:hover {
@@ -59,7 +63,7 @@
 
     <h1>WAR Scouting 2026</h1>
 
-    <button onclick="handleClick()">CLICK THIS!</button>
+    <button onclick="handleClick()">CLICK HERE!</button>
 
     <p>After you click the button, scroll down to "Edit Config", paste the URL (already copied for you), and click save.</p>
 
